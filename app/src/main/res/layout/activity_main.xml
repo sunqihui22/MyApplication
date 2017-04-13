@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myapplication.activity.MainActivity">
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:cube_ptr= "http://schemas.android.com/apk/res-auto"
+            tools:openDrawer="start">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <include layout="@layout/toolbar"/>
+
+                <in.srain.cube.views.ptr.PtrFrameLayout
+                    android:id="@+id/fl_ptr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    cube_ptr:ptr_resistance="1.7"
+                    cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+                    cube_ptr:ptr_duration_to_close="200"
+                    cube_ptr:ptr_duration_to_close_header="1000"
+                    cube_ptr:ptr_keep_header_when_refresh="true"
+                    cube_ptr:ptr_pull_to_fresh="false">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <com.dd.CircularProgressButton
+                                android:id="@+id/btn_go"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/green"
+                                android:textColor="@color/cpb_white"
+                                android:textSize="18sp"
+                                app:cpb_cornerRadius="48dp"
+                                app:cpb_textComplete="OK"
+                                app:cpb_textError="ERROR"
+                                app:cpb_textIdle="图标" />
+
+                            <com.dd.CircularProgressButton
+                                android:id="@+id/fragment1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/green"
+                                android:textColor="@color/cpb_white"
+                                android:textSize="18sp"
+                                app:cpb_cornerRadius="48dp"
+                                app:cpb_textComplete="OK"
+                                app:cpb_textError="ERROR"
+                                app:cpb_textIdle="fragment1" />
+
+                            <com.dd.CircularProgressButton
+                                android:id="@+id/fragment2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/green"
+                                android:textColor="@color/cpb_white"
+                                android:textSize="18sp"
+                                app:cpb_cornerRadius="48dp"
+                                app:cpb_textComplete="OK"
+                                app:cpb_textError="ERROR"
+                                app:cpb_textIdle="fragment2" />
+
+                            <com.dd.CircularProgressButton
+                                android:id="@+id/fragment3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/green"
+                                android:textColor="@color/cpb_white"
+                                android:textSize="18sp"
+                                app:cpb_cornerRadius="48dp"
+                                app:cpb_textComplete="OK"
+                                app:cpb_textError="ERROR"
+                                app:cpb_textIdle="fragment3" />
+
+                            <FrameLayout
+                                android:id="@+id/content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"></FrameLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </in.srain.cube.views.ptr.PtrFrameLayout>
+
+        </LinearLayout>
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/navigationView_concrete_main_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/navigationhead"
+                app:menu="@menu/item_navigation"/>
+
+        </android.support.v4.widget.DrawerLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="66dp"
+        android:layout_marginRight="16dp"
+        android:src="@android:drawable/star_on"
+        android:background="@color/cardview_dark_background"/>
+
+</android.support.design.widget.CoordinatorLayout>

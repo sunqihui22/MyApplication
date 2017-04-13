@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.example.administrator.myapplication"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'//用于Material Design
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:cardview-v7:24.0.0-alpha1'//使布局有立体感
+    compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
+
+    //region 插件butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    //endregion
+
+    //带有进度条的按钮
+    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+
+    //region fragmentation调用
+    compile 'me.yokeyword:fragmentation:0.7.10'
+    // 如果想使用SwipeBack 滑动边缘退出Fragment/Activity功能，请再添加下面的库
+    compile 'me.yokeyword:fragmentation-swipeback:0.7.9'
+    //endregion
+
+    compile 'in.srain.cube:ultra-ptr:1.0.11'//下拉刷新
+
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
